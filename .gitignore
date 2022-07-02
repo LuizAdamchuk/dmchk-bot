@@ -67,6 +67,8 @@ web_modules/
 .node_repl_history
 !.docker/dbdata/**/.gitkeep
 .docker/dbdata/**/
+*.nlp
+
 # Output of 'npm pack'
 *.tgz
 

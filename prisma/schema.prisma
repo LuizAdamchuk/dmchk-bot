@@ -21,6 +21,8 @@ model User {
   user_created_at DateTime @default(now())
   user_updated_at DateTime @default(now())
   Location Location[]
+
+  @@map("user")
 }
 model Location {
   location_id String @id @default(uuid())
@@ -32,4 +34,16 @@ model Location {
   location_updated_at DateTime @default(now())
   location_user_id String?
   User User? @relation(fields: [location_user_id], references: [user_id])
+
+  @@map("location")
+}
+
+model NLPImplementation {
+  nlp_id String @id @default(uuid())
+  nlp_doubt String
+  nlp_valid Boolean
+  nlp_created_at DateTime @default(now())
+  nlp_updated_at DateTime @default(now())
+
+  @@map("nlp_implementation")
 }
